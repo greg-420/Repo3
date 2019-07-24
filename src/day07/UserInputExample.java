@@ -27,7 +27,8 @@ class UserInput{
 		firstDigit = firstDigit * 10;
 		secondDigit -= 48;*/
 		
-		int number = Integer.parseInt(brRef.readLine());
+		double number = Double.parseDouble(brRef.readLine()); //Integer is wrapper class.
+		//command line argument (yet another way of reading)
 		
 		System.out.println(number);
 	}
