@@ -15,7 +15,7 @@ public class DevCode {
 //			String s = null;
 //			System.out.println(s.length());
 			
-			int a[] = null;
+			int a[] = {1};
 			System.out.println(a[0]);
 		} 
 		

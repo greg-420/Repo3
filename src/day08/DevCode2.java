@@ -22,12 +22,12 @@ public class DevCode2 {
 		System.out.println(number);
 		}
 	
-	catch (NumberFormatException e){
-		System.out.println("Number format exception!");
-	}
-	
-	finally {
-		System.out.println("closing files");
-	}
+		catch (NumberFormatException e){
+			System.out.println("Number format exception!");
+		}
+		
+		finally {
+			System.out.println("closing files");
+		}
 	}
 }
