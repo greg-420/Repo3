@@ -1,4 +1,4 @@
-package day10;
+package ArrayList;
 
 //List<T> interface
 interface Book<Programming> {//Java is a Type of Book <T>. Type can be any name. 
