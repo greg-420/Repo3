@@ -27,7 +27,6 @@ public class Problems11and13 { //remove duplicates from array
 		}
 		
 		return arrList;
-		
 	}
 	
 	public static void main(String[] args){

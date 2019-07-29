@@ -10,7 +10,7 @@ class User extends Throwable{
 			try {
 				throw refUser; //can do garbage collection properly. can create separate method and call in catch block. best practice.
 			} catch (User e) {
-				System.out.println("Exception caught.."); //if no exception thrown, high possibility of data loss. need to handle this.
+				System.out.println("Exception caught.."); //if no exception thrown, high possib
 //				System.out.println("Age can't be less than 18.");
 			} //points to a memory address.
 			finally { //executes whether there is an exception or not
