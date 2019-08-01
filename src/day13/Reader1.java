@@ -1,4 +1,4 @@
-package file;
+package day13;
 
 import java.io.*;
 public class Reader1 {
