@@ -3,6 +3,7 @@ package dao;
 import java.sql.*;
 import java.util.*;
 
+import connection.DBConnectionDAOImpl;
 import pojo.Person;
 
 public class PersonDAOImpl implements PersonDAO {
@@ -37,24 +38,53 @@ public class PersonDAOImpl implements PersonDAO {
 	}
 
 	@Override
-	public List<Person> listPersons() {
+	public List<Person> listPersons() throws ClassNotFoundException, SQLException {
 		// TODO Auto-generated method stub
+		Connection refDB = DBConnectionDAOImpl.connect();
+		Statement st = refDB.createStatement();
 		List<Person> l = new ArrayList<Person>();
-		return null;
+		String sql = "SELECT id, name, password, dob FROM persons";
+		ResultSet rs = st.executeQuery(sql); //if you wanna print something.
+		
+//		
+		// Extract data from result set
+		
+		while (rs.next()){
+//			System.out.println( "\t" + rs.getInt(1) + "\t" + rs.getString(2) + "\t" + rs.getString(3) + "\t" + rs.getString(4));
+			Person p = new Person();
+			p.setId(rs.getInt(1));
+			p.setName(rs.getString(2));
+			p.setPassword(rs.getString(3));
+			p.setDob(rs.getString(4));
+			l.add(p);
+		}
+		return l;
 	}
 
 	@Override
-	public void getPersonByID(int id) {
+	public void getPersonByID(int id) throws ClassNotFoundException, SQLException {
 		// TODO Auto-generated method stub
 		//get connection
+		Connection refDB = DBConnectionDAOImpl.connect();
+		Statement st = refDB.createStatement();
+		
+		String sql = "SELECT id, name, password, dob FROM persons WHERE id = " + id;
+		ResultSet rs = st.executeQuery(sql);
+		rs.next();
+		System.out.println(rs.getInt(1) + " " + rs.getString(2) + " " + rs.getString(3) +" " +  rs.getString(4) );
+		
 
 	}
 
 	@Override
-	public void removePerson(int id) {
+	public void removePerson(int id) throws ClassNotFoundException, SQLException {
 		// TODO Auto-generated method stub
 		//get connection
-
+		Connection refDB = DBConnectionDAOImpl.connect();
+		Statement st = refDB.createStatement();
+		
+		String sql = "DELETE from persons WHERE id = " + id + "";
+		st.executeUpdate(sql);
 	}
 
 }
