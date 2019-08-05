@@ -32,7 +32,7 @@ public class DBConnectionDAOImpl {
 	public static Connection connect(){ // no need to handle exception here.
 		Connection con = null;
 		FileReader fReader = null;
-		//Create properties object.
+		//Create properties object.//hello;
 		Properties propRef = new Properties();
 		
 		try{
