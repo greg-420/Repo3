@@ -20,6 +20,6 @@ public class Project {
 		refList.foo();
 //		refDelete.removeController();
 //		refList.foo();
-		refGet.getPersonController();
+//		refGet.getPersonController();	
 	}
 }
